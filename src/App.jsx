@@ -23,7 +23,7 @@ function App() {
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <EstiloGlobal />
       <BrowserRouter>
-        <Header toggleTheme={toggleTheme} />
+        <Header toggleTheme={toggleTheme} currentTheme={theme} />
         <main className="conteudo">
           <Routes>
             <Route path="/" element={<Home />} />
