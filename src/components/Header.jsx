@@ -6,6 +6,11 @@ const HeaderContainer = styled.header`
   width: 100%;
   position: relative;
 `;
+const Titulo = styled.h1`
+  font-size: 2.5rem;
+  font-family: "Arial", sans-serif;
+  color: ${(props) => props.theme.highlight} !important;
+`;
 const AlinharTitulo = styled.div`
   display: flex;
   justify-content: center;
@@ -84,16 +89,25 @@ const MobileNavLink = styled(NavLink)`
 
 const ThemeButton = styled.button`
   position: absolute;
-  left: 20px;
+  left: 40px;
   background: none;
   border: 2px solid ${(p) => p.theme.border};
-  padding: 5px 10px;
-  border-radius: 20px;
+  border-radius: 12px;
   cursor: pointer;
+  font-size: 20px;
   font-weight: bold;
+  display: flex;
+  width: 45px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
   color: ${(p) => p.theme.text};
   @media (max-width: 768px) {
-    right: 70px;
+    left: 20px;
+    right: auto;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
   }
 `;
 
@@ -105,10 +119,10 @@ function Header({ toggleTheme, currentTheme }) {
     <HeaderContainer>
       <AlinharTitulo>
         <Link to="/" style={{ textDecoration: "none" }}>
-          <h1>CafeMiau</h1>
+          <Titulo>CafeMiau</Titulo>
         </Link>
         <ThemeButton onClick={toggleTheme}>
-          {currentTheme === "light" ? "🌙 Dark" : "☀️ Light"}
+          {currentTheme === "light" ? "☾" : "☀︎"}
         </ThemeButton>
       </AlinharTitulo>
 
