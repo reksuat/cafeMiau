@@ -19,15 +19,17 @@ const EstiloGlobal = createGlobalStyle`
     max-width: 1200px;
     margin: 0 auto;
   }
-    h1 {font-size: 2.5rem;}
-    h2 {font-size: 2rem;}
-    h3 {font-size: 1.5rem;}
-    h1, h2, h3 {
-    color: ${(props) => props.theme.highlight};
+    h1 {font-size: 2rem;}
+    h2 {font-size: 1.5rem;}
+    h3 {font-size: 1.4rem;}
+    h1,h2, h3 {
+    color: ${(props) => props.theme.border};
     font-family:"Comic Sans MS", cursive, sans-serif;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    text-align: center;
   }
     p {
+    justify-content: center;
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 15px;
