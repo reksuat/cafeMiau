@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "nome": "Cappuccino Felino",
+    "categoria": "bebidas-quentes",
+    "preco": 14.9,
+    "descricao": "Cappuccino cremoso com arte latte de patinha. O clássico do CafeMiau.",
+    "foto": "https://images.unsplash.com/photo-1534778101976-62847782c213?w=400"
+  },
+  {
+    "id": 2,
+    "nome": "Café Coado da Casa",
+    "categoria": "bebidas-quentes",
+    "preco": 9.9,
+    "descricao": "Grãos selecionados, coado na hora. Simples, honesto e reconfortante.",
+    "foto": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400"
+  },
+  {
+    "id": 3,
+    "nome": "Chocolate Quente Cremoso",
+    "categoria": "bebidas-quentes",
+    "preco": 13.9,
+    "descricao": "Chocolate belga com leite vaporizado e chantilly. Para dias frios e corações aquecidos.",
+    "foto": "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=400"
+  },
+  {
+    "id": 4,
+    "nome": "Latte de Baunilha",
+    "categoria": "bebidas-quentes",
+    "preco": 15.9,
+    "descricao": "Espresso duplo com leite vaporizado e calda de baunilha artesanal.",
+    "foto": "https://images.unsplash.com/photo-1561882468-9110e03e0f78?w=400"
+  },
+  {
+    "id": 5,
+    "nome": "Frappuccino de Caramelo",
+    "categoria": "bebidas-geladas",
+    "preco": 18.9,
+    "descricao": "Café gelado batido com caramelo e finalizado com chantilly. Refrescante e irresistível.",
+    "foto": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400"
+  },
+  {
+    "id": 6,
+    "nome": "Cold Brew da Miau",
+    "categoria": "bebidas-geladas",
+    "preco": 16.9,
+    "descricao": "Café extraído a frio por 12 horas. Suave, encorpado e sem amargor.",
+    "foto": "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=400"
+  },
+  {
+    "id": 7,
+    "nome": "Matcha Latte Gelado",
+    "categoria": "bebidas-geladas",
+    "preco": 17.9,
+    "descricao": "Matcha japonês premium com leite de aveia gelado. Refrescante e cheio de energia.",
+    "foto": "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=400"
+  },
+  {
+    "id": 8,
+    "nome": "Torta de Limão da Tica",
+    "categoria": "doces",
+    "preco": 16.9,
+    "descricao": "Torta artesanal de limão siciliano com merengue maçaricado. Receita exclusiva da casa.",
+    "foto": "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=400"
+  },
+  {
+    "id": 9,
+    "nome": "Brownie de Chocolate",
+    "categoria": "doces",
+    "preco": 12.9,
+    "descricao": "Brownie denso de chocolate meio amargo com nozes. Melhor acompanhado de um cappuccino.",
+    "foto": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400"
+  },
+  {
+    "id": 10,
+    "nome": "Cheesecake de Morango",
+    "categoria": "doces",
+    "preco": 17.9,
+    "descricao": "Cheesecake cremoso com calda de morango fresco. Feito com amor toda manhã.",
+    "foto": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400"
+  },
+  {
+    "id": 11,
+    "nome": "Croissant de Presunto e Queijo",
+    "categoria": "salgados",
+    "preco": 14.9,
+    "descricao": "Croissant folhado assado na hora com presunto cru e queijo gruyère.",
+    "foto": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400"
+  },
+  {
+    "id": 12,
+    "nome": "Quiche de Alho-Poró",
+    "categoria": "salgados",
+    "preco": 16.9,
+    "descricao": "Quiche artesanal com alho-poró, creme de leite e queijo. Servida morna.",
+    "foto": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400"
+  },
+  {
+    "id": 13,
+    "nome": "Wrap Vegano de Grão-de-Bico",
+    "categoria": "vegano",
+    "preco": 19.9,
+    "descricao": "Wrap integral com grão-de-bico temperado, mix de folhas, tomate e homus.",
+    "foto": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400"
+  },
+  {
+    "id": 14,
+    "nome": "Bolo de Cenoura Vegano",
+    "categoria": "vegano",
+    "preco": 13.9,
+    "descricao": "Bolo fofinho de cenoura com cobertura de chocolate vegano. Sem ovos, sem leite, cheio de sabor.",
+    "foto": "https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=400"
+  },
+  {
+    "id": 15,
+    "nome": "Latte de Aveia com Canela",
+    "categoria": "vegano",
+    "preco": 15.9,
+    "descricao": "Espresso com leite de aveia vaporizado e um toque de canela. 100% vegano e delicioso.",
+    "foto": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400"
+  }
+]
