@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
+import Botao from "./Botao.jsx";
+import userClaro from "../icones/userClaro.png";
+import userEscuro from "../icones/userEscuro.png";
 
 const HeaderContainer = styled.header`
   width: 100%;
@@ -54,7 +57,7 @@ const MenuToggle = styled.button`
   cursor: pointer;
   position: absolute;
   right: 20px;
-  top: 20px;
+  top: 10px;
   color: ${(p) => p.theme.text};
   z-index: 1001;
   @media (max-width: 768px) {
@@ -89,7 +92,7 @@ const MobileNavLink = styled(NavLink)`
 
 const ThemeButton = styled.button`
   position: absolute;
-  left: 40px;
+  left: 25px;
   background: none;
   border: 2px solid ${(p) => p.theme.border};
   border-radius: 12px;
@@ -110,6 +113,19 @@ const ThemeButton = styled.button`
     font-size: 16px;
   }
 `;
+const UserButton = styled(ThemeButton)`
+  left: auto;
+  right: 25px;
+  @media (max-width: 768px) {
+    right: 60px;
+    left: auto;
+  }
+  img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+  }
+`;
 
 // --- COMPONENTE PRINCIPAL ---
 function Header({ toggleTheme, currentTheme }) {
@@ -124,8 +140,17 @@ function Header({ toggleTheme, currentTheme }) {
         <ThemeButton onClick={toggleTheme}>
           {currentTheme === "light" ? "☾" : "☀︎"}
         </ThemeButton>
+        <UserButton
+          onClick={() =>
+            alert("Funcionalidade de login ainda não implementada!")
+          }
+        >
+          <img
+            src={currentTheme === "light" ? userEscuro : userClaro}
+            alt="Usuário"
+          />
+        </UserButton>
       </AlinharTitulo>
-
       <MenuToggle onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? "✕" : "☰"}
       </MenuToggle>
