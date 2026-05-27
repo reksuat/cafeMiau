@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Botao from "./Botao.jsx";
 import userClaro from "../icones/userClaro.png";
@@ -13,6 +13,10 @@ const Titulo = styled.h1`
   font-size: 2.5rem;
   font-family: "Arial", sans-serif;
   color: ${(props) => props.theme.highlight} !important;
+  a & {
+    text-decoration: none;
+    color: inherit;
+  }
 `;
 const AlinharTitulo = styled.div`
   display: flex;
@@ -96,21 +100,21 @@ const ThemeButton = styled.button`
   background: none;
   border: 2px solid ${(p) => p.theme.border};
   border-radius: 12px;
-  cursor: pointer;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
   display: flex;
   width: 45px;
   height: 45px;
   justify-content: center;
   align-items: center;
+  padding: 0;
+  cursor: pointer;
   color: ${(p) => p.theme.text};
   @media (max-width: 768px) {
     left: 20px;
     right: auto;
     width: 40px;
     height: 40px;
-    font-size: 16px;
   }
 `;
 const UserButton = styled(ThemeButton)`
@@ -123,13 +127,15 @@ const UserButton = styled(ThemeButton)`
   img {
     width: 30px;
     height: 30px;
-    object-fit: cover;
+    object-fit: contain;
+    transition: all 0.3s ease-in-out;
   }
 `;
 
 // --- COMPONENTE PRINCIPAL ---
 function Header({ toggleTheme, currentTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate(); //iniciando hook de rota
 
   return (
     <HeaderContainer>
@@ -140,12 +146,9 @@ function Header({ toggleTheme, currentTheme }) {
         <ThemeButton onClick={toggleTheme}>
           {currentTheme === "light" ? "☾" : "☀︎"}
         </ThemeButton>
-        <UserButton
-          onClick={() =>
-            alert("Funcionalidade de login ainda não implementada!")
-          }
-        >
+        <UserButton onClick={() => navigate("/admin")}>
           <img
+            key={currentTheme}
             src={currentTheme === "light" ? userEscuro : userClaro}
             alt="Usuário"
           />
