@@ -1,7 +1,7 @@
 import { Navigate } from "react-router-dom";
 
 function RotaProtegida({ children }) {
-  const eAdmin = localStorage.getItem("autenticado") === "true";
+  const eAdmin = sessionStorage.getItem("autenticado") === "true";
   if (!eAdmin) {
     return <Navigate to="/login" replace />;
   }
