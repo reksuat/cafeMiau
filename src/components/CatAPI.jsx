@@ -1,5 +1,15 @@
 import { useState, useEffect } from "react";
 import Botao from "../components/Botao";
+import styled from "styled-components";
+
+const MinhaImagem = styled.img`
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  max-width: 350px;
+  box-shadow: 10px 10px 0px ${(props) => props.theme.border};
+`;
 
 function CatAPI() {
   const [catImage, setCatImage] = useState("");
@@ -43,18 +53,7 @@ function CatAPI() {
           Carregando gatinho... 🐾
         </p>
       ) : (
-        <img
-          src={catImage}
-          alt="Gato aleatório"
-          style={{
-            width: "100%",
-            height: "400px",
-            objectFit: "cover",
-            borderRadius: "10px",
-            maxWidth: "350px",
-            boxShadow: "10px 10px 0px #d4a5a5",
-          }}
-        />
+        <MinhaImagem src={catImage} alt="Gato aleatório" />
       )}
       <Botao onClick={BotaoTroca}>🐾 Mudar gato</Botao>
     </div>
