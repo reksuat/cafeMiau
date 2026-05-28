@@ -6,6 +6,13 @@ const EstiloGlobal = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+    body, div, section, nav, button, input, a {
+transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
     body {
     font-family: "Arial", sans-serif;
     background-color: ${(props) => props.theme.bg};       
@@ -15,7 +22,7 @@ const EstiloGlobal = createGlobalStyle`
     }
 
     main.conteudo {
-    padding: 40px 20px;
+    padding: 20px 20px;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -25,14 +32,8 @@ const EstiloGlobal = createGlobalStyle`
     h1,h2, h3 {
     color: ${(props) => props.theme.border};
     font-family:"Comic Sans MS", cursive, sans-serif;
-    margin-top: 10px;
+    margin-bottom: 10px;
     text-align: center;
-  }
-    p {
-    justify-content: center;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
   }
 `;
 export default EstiloGlobal;
