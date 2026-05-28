@@ -23,7 +23,7 @@ const Paragrafo = styled.p`
 
 function Texto({ children, $destaque, ...props }) {
   return (
-    <Paragrafo {...props} $destaque={$destaque}>
+    <Paragrafo {...props} destaque={$destaque}>
       {children}
     </Paragrafo>
   );

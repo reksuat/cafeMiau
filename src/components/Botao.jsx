@@ -1,8 +1,10 @@
-import Styled from "styled-components";
+import styled from "styled-components";
 
-const StyledButton = Styled.button`
-background-color: ${(props) =>
-  props.$variant === "secondary" ? props.theme.border : props.theme.highlight};
+const StyledButton = styled.button`
+  background-color: ${(props) =>
+    props.$variant === "secondary"
+      ? props.theme.border
+      : props.theme.highlight};
   border: none;
   border-radius: 8px;
   color: ${(props) => props.theme.bg};
@@ -13,6 +15,16 @@ background-color: ${(props) =>
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+  &:hover {
+    background-color: ${(props) =>
+      props.$variant === "secondary"
+        ? props.theme.highlight
+        : props.theme.border};
+    transform: translateY(-2px);
+  }
 `;
 
 function Botao({ children, $variant, ...props }) {

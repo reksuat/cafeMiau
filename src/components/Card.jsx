@@ -11,6 +11,11 @@ export const CardContainer = styled.div`
   flex-direction: column;
   gap: 12px;
   text-align: center;
+  box-shadow: 3px 4px 12px ${(p) => p.theme.shadow};
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 `;
 
 const CardImage = styled.img`
