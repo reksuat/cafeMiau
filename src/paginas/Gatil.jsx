@@ -6,8 +6,10 @@ import useLocalStorage from "../data/LocalStorage";
 import Card from "../components/Card.jsx";
 import Grid from "../components/Grid.jsx";
 import Texto from "../components/Texto.jsx";
+import Botao from "../components/Botao.jsx";
+import DetalhesGato from "../components/DetalhesGato.jsx";
 import FormularioVisita from "../components/FormularioVisita.jsx";
-
+// Função para calcular a idade do gato a partir da data de nascimento, incluindo meses
 function calcularIdade(nascimento) {
   if (!nascimento) return "?";
   const hoje = new Date();
@@ -21,10 +23,15 @@ const ContainerGatil = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+
+  @media (max-width: 480px) {
+    padding: 0 12px;
+  }
 `;
 const NavAbas = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 15px;
   margin-bottom: 30px;
   margin-top: 20px;
@@ -48,7 +55,8 @@ function Gatil() {
   const [edicoes] = useLocalStorage("cafemiau_gatos_edicoes", {});
   const [extras] = useLocalStorage("cafemiau_gatos_extras", []);
   const [abaAtiva, setAbaAtiva] = useState("moradores");
-
+  const [gatoDescricao, setGatoDescricao] = useState(null);
+  //guarda alterações feitas nos gatos, status de edição e gatos novos adicionados, guarda no localStorage
   const gatos = [
     ...gatosBase.map((g) => ({ ...g, ...(edicoes[g.id] || {}) })),
     ...extras,
@@ -57,18 +65,20 @@ function Gatil() {
   const adotados = gatos.filter((g) => g.status === "adotado");
 
   const renderCard = (gato) => {
-    const idade = calcularIdade(gato.nascimento);
     const textoBotaoCard =
-      gato.status === "adotado" ? "Ver História 🏡" : "Adotar 🐾";
+      gato.status === "adotado" ? "Ver História 🏡" : "Saiba mais 🐾";
 
     return (
       <Card
         key={gato.id}
-        imagem={gato.foto}
+        imagem={
+          gato.foto ||
+          "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=280&h=170&auto=format&fit=crop"
+        }
         titulo={gato.nome}
-        descricao={`${idade} anos — ${gato.descricao}`}
+        descricao=""
         textoBotao={textoBotaoCard}
-        onBotaoClick={() => alert(`Você clicou no(a) ${gato.nome}!`)}
+        onBotaoClick={() => setGatoDescricao(gato)}
       />
     );
   };
@@ -83,13 +93,13 @@ function Gatil() {
           $ativa={abaAtiva === "moradores"}
           onClick={() => setAbaAtiva("moradores")}
         >
-          Subpágina: Moradores ({residentes.length})
+          Moradores ({residentes.length})
         </BotaoAba>
         <BotaoAba
           $ativa={abaAtiva === "adotados"}
           onClick={() => setAbaAtiva("adotados")}
         >
-          Subpágina: Já Adotados ({adotados.length})
+          Já Adotados ({adotados.length})
         </BotaoAba>
       </NavAbas>
       {abaAtiva === "moradores" ? (
@@ -100,6 +110,13 @@ function Gatil() {
         <Grid style={{ justifyItems: "center" }}>
           {adotados.map(renderCard)}
         </Grid>
+      )}
+      {gatoDescricao && (
+        <DetalhesGato
+          gato={gatoDescricao}
+          idade={calcularIdade(gatoDescricao.nascimento)}
+          onFechar={() => setGatoDescricao(null)}
+        />
       )}
       <FormularioVisita />
     </ContainerGatil>
