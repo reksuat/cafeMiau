@@ -87,12 +87,12 @@ function Navbar() {
               Home
             </MobileNavLink>
             <MobileNavLink
-              to="/admin/produtos"
+              to="/admin/cardapio"
               onClick={() => setMenuOpen(false)}
             >
               Gerenciar Cardápio
             </MobileNavLink>
-            <MobileNavLink to="/admin/gatos" onClick={() => setMenuOpen(false)}>
+            <MobileNavLink to="/admin/gatil" onClick={() => setMenuOpen(false)}>
               Gerenciar Gatos
             </MobileNavLink>
             <MobileNavLink
@@ -102,7 +102,7 @@ function Navbar() {
                 setMenuOpen(false);
               }}
             >
-              Sair 🚪
+              Sair
             </MobileNavLink>
           </>
         ) : (
@@ -126,8 +126,8 @@ function Navbar() {
         {ehPainelAdmin ? (
           <>
             <StyleNavLink to="/admin">Home</StyleNavLink>
-            <StyleNavLink to="/admin/produtos">Gerenciar Cardápio</StyleNavLink>
-            <StyleNavLink to="/admin/gatos">Gerenciar Gatos</StyleNavLink>
+            <StyleNavLink to="/admin/cardapio">Gerenciar Cardápio</StyleNavLink>
+            <StyleNavLink to="/admin/gatil">Gerenciar Gatos</StyleNavLink>
             <StyleNavLink
               to="/"
               onClick={() => sessionStorage.clear()}
