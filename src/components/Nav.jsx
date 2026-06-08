@@ -125,7 +125,7 @@ function Navbar() {
       <Nav>
         {ehPainelAdmin ? (
           <>
-            <StyleNavLink to="/admin">Dashboard</StyleNavLink>
+            <StyleNavLink to="/admin">Home</StyleNavLink>
             <StyleNavLink to="/admin/produtos">Gerenciar Cardápio</StyleNavLink>
             <StyleNavLink to="/admin/gatos">Gerenciar Gatos</StyleNavLink>
             <StyleNavLink
@@ -133,7 +133,7 @@ function Navbar() {
               onClick={() => sessionStorage.clear()}
               style={{ color: "#e53935" }}
             >
-              Sair 🚪
+              Sair
             </StyleNavLink>
           </>
         ) : (

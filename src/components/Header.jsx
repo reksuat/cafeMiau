@@ -3,8 +3,8 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Nav from "./Nav.jsx";
 import Botao from "./Botao.jsx";
-import userClaro from "../icones/userClaro.png";
-import userEscuro from "../icones/userEscuro.png";
+import userClaro from "/public/icones/userClaro.png";
+import userEscuro from "/public/icones/userEscuro.png";
 
 const HeaderContainer = styled.header`
   width: 100%;

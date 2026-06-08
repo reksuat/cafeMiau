@@ -14,7 +14,7 @@ const Paragrafo = styled.p`
   }
 
   ${(props) =>
-    props.destaque &&
+    props.$destaque &&
     `color: ${props.theme.highlight};
        font-weight: bold;
        font-size: 1.3rem;
@@ -23,7 +23,7 @@ const Paragrafo = styled.p`
 
 function Texto({ children, $destaque, ...props }) {
   return (
-    <Paragrafo {...props} destaque={$destaque}>
+    <Paragrafo {...props} $destaque={$destaque}>
       {children}
     </Paragrafo>
   );
