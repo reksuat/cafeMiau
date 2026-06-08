@@ -16,6 +16,8 @@ import Sobre from "./paginas/Sobre.jsx";
 import Gatil from "./paginas/Gatil.jsx";
 import Cardapio from "./paginas/Cardapio.jsx";
 import Login from "./components/Login.jsx";
+import AdminCardapio from "./paginas/admin/AdminCardapio.jsx";
+import AdminGatil from "./paginas/admin/AdminGatil.jsx";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -42,6 +44,8 @@ function App() {
                 </RotaProtegida>
               }
             />
+            <Route path="/admin/cardapio" element={<AdminCardapio />} />
+            <Route path="/admin/gatil" element={<AdminGatil />} />
             <Route path="*" element={<h2>Página não encontrada 🐾</h2>} />
           </Routes>
         </main>
