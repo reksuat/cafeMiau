@@ -3,25 +3,15 @@ import styled from "styled-components";
 import gatosBase from "../data/Gatos.json";
 import useLocalStorage from "../data/LocalStorage";
 
+import JanelaSobreposta from "../components/JanelaSobreposta.jsx";
 import Card from "../components/Card.jsx";
 import Grid from "../components/Grid.jsx";
 import Texto from "../components/Texto.jsx";
 import Botao from "../components/Botao.jsx";
 import DetalhesGato from "../components/DetalhesGato.jsx";
 import FormularioVisita from "../components/FormularioVisita.jsx";
-// Função para calcular a idade do gato a partir da data de nascimento, incluindo meses
-function calcularIdade(nascimento) {
-  if (!nascimento) return "?";
-  const hoje = new Date();
-  const nasc = new Date(nascimento);
-  let meses = (hoje.getFullYear() - nasc.getFullYear()) * 12;
-  meses += hoje.getMonth() - nasc.getMonth();
-  if (hoje.getDate() < nasc.getDate()) meses--;
-  if (meses < 1) return "Menos de 1 mês";
-  if (meses < 12) return `${meses} ${meses === 1 ? "mês" : "meses"}`;
-  const idade = Math.floor(meses / 12);
-  return `${idade} ${idade === 1 ? "ano" : "anos"}`;
-}
+import { calcularIdade } from "../util/CalcularIdade.jsx";
+import IntroducaoGatil from "../components/IntroducaoGatil.jsx";
 const ContainerGatil = styled.div`
   max-width: 1200px;
   margin: 0 auto;
@@ -59,6 +49,7 @@ function Gatil() {
   const [extras] = useLocalStorage("cafemiau_gatos_extras", []);
   const [abaAtiva, setAbaAtiva] = useState("moradores");
   const [gatoDescricao, setGatoDescricao] = useState(null);
+  const [janela, setJanela] = useState(false);
   //guarda alterações feitas nos gatos, status de edição e gatos novos adicionados, guarda no localStorage
   const gatos = [
     ...gatosBase.map((g) => ({ ...g, ...(edicoes[g.id] || {}) })),
@@ -87,10 +78,7 @@ function Gatil() {
   };
   return (
     <ContainerGatil>
-      <h2>Gatil 🐾</h2>
-      <Texto style={{ textAlign: "center", marginBottom: "30px" }}>
-        Conheça os felinos que fazem o CafeMiau ser especial.
-      </Texto>
+      <IntroducaoGatil setJanela={setJanela} />
       <NavAbas>
         <BotaoAba
           $ativa={abaAtiva === "moradores"}
@@ -121,7 +109,11 @@ function Gatil() {
           onFechar={() => setGatoDescricao(null)}
         />
       )}
-      <FormularioVisita />
+      {janela && (
+        <JanelaSobreposta onFechar={() => setJanela(false)}>
+          <FormularioVisita />
+        </JanelaSobreposta>
+      )}
     </ContainerGatil>
   );
 }
