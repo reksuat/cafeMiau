@@ -27,13 +27,6 @@ function DetalhesGato({ gato, onFechar, idade }) {
       >
         <span>Descrição:</span> {gato.descricao}
       </Texto>
-
-      <Botao
-        onClick={onFechar}
-        style={{ width: "60%", marginTop: "5px", alignSelf: "center" }}
-      >
-        Fechar ×
-      </Botao>
     </JanelaSobreposta>
   );
 }
