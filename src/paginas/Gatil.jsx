@@ -14,10 +14,13 @@ function calcularIdade(nascimento) {
   if (!nascimento) return "?";
   const hoje = new Date();
   const nasc = new Date(nascimento);
-  let idade = hoje.getFullYear() - nasc.getFullYear();
-  const mes = hoje.getMonth() - nasc.getMonth();
-  if (mes < 0 || (mes === 0 && hoje.getDate() < nasc.getDate())) idade--;
-  return idade;
+  let meses = (hoje.getFullYear() - nasc.getFullYear()) * 12;
+  meses += hoje.getMonth() - nasc.getMonth();
+  if (hoje.getDate() < nasc.getDate()) meses--;
+  if (meses < 1) return "Menos de 1 mês";
+  if (meses < 12) return `${meses} ${meses === 1 ? "mês" : "meses"}`;
+  const idade = Math.floor(meses / 12);
+  return `${idade} ${idade === 1 ? "ano" : "anos"}`;
 }
 const ContainerGatil = styled.div`
   max-width: 1200px;

@@ -10,7 +10,7 @@ function DetalhesGato({ gato, onFechar, idade }) {
       <h2>{gato.nome}</h2>
 
       <Texto style={{ fontSize: "1rem", marginBottom: "0" }}>
-        <span>Idade:</span> {idade} anos
+        <span>Idade:</span> {idade}
       </Texto>
 
       <Texto style={{ fontSize: "1rem", marginBottom: "0" }}>
