@@ -4,23 +4,17 @@ import Input from "./Input.jsx";
 import Botao from "./Botao.jsx";
 
 const FormContainer = styled.form`
-  background-color: ${(p) => p.theme.surface};
-  border: 2px solid ${(p) => p.theme.border};
-  border-radius: 16px;
-  padding: 30px;
-  max-width: 500px;
   width: 100%;
-  margin: 40px auto 10px auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
 `;
 
 const FormTitulo = styled.h3`
   text-align: center;
   color: ${(p) => p.theme.highlight};
-  margin-bottom: 10px;
+  margin-bottom: 0 0 10px 0;
 `;
 
 function FormularioVisita() {
@@ -36,7 +30,7 @@ function FormularioVisita() {
 
   return (
     <FormContainer onSubmit={handleSubmit}>
-      <FormTitulo>Agende uma Visita ao Gatil 📅</FormTitulo>
+      <FormTitulo>Estamos ansiosos pela sua visita! (˵◝ ⩊ ◜˵マ</FormTitulo>
       <Input
         id="nome_visita"
         label="Seu Nome:"
@@ -59,7 +53,7 @@ function FormularioVisita() {
         type="submit"
         style={{ width: "60%", marginTop: "10px", alignSelf: "center" }}
       >
-        Solicitar Agendamento
+        Reservar Visita
       </Botao>
     </FormContainer>
   );
