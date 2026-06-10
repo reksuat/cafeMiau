@@ -4,9 +4,6 @@ import gatosBase from "../data/Gatos.json";
 import useLocalStorage from "../data/LocalStorage";
 
 import JanelaSobreposta from "../components/JanelaSobreposta.jsx";
-import Card from "../components/Card.jsx";
-import Grid from "../components/Grid.jsx";
-import Texto from "../components/Texto.jsx";
 import Botao from "../components/Botao.jsx";
 import ListaGatos from "../components/ListaGatos.jsx";
 import DetalhesGato from "../components/DetalhesGato.jsx";
