@@ -20,7 +20,7 @@ export const lightTheme = {
   border: "#c58f8f",
   text: "#4b2e2e", // chocolate
   highlight: "#5c3a2e", // chocolate forte
-  shadow: "rgba(92, 58, 46, 0.18)",
+  shadow: "rgba(92, 58, 46, 0.34)",
 };
 
 export const darkTheme = {
@@ -29,5 +29,5 @@ export const darkTheme = {
   border: "#8f5f5f", // morango escuro
   text: "#f7e7dc", // creme
   highlight: "#d9a5a5", // milkshake de morango
-  shadow: "rgba(0,0,0,0.35)",
+  shadow: "rgba(0, 0, 0, 0.4)",
 };

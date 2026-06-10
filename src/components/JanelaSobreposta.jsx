@@ -42,7 +42,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
-  box-shadow: 0px 10px 30px ${(p) => p.theme.shadow};
+  box-shadow: 0px 10px 20px ${(p) => p.theme.border};
 
   @media (max-width: 480px) {
     width: 100%;

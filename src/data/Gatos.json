@@ -5,7 +5,7 @@
     "nascimento": "2020-01-15",
     "descricao": "Oliver é o alma do CafeMiau! Amável com todo mundo, mas não resiste a uma travessura — se você deixar o copo na mesa, ele vai derrubar só pra te ver reagir. Adora colo e ronrona alto.",
     "status": "residente",
-    "foto": null
+    "foto": "/public/gatos/oliver.jpg"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "nascimento": "2022-03-10",
     "descricao": "Gatinho preto que nos traz muita sorte! Nick chegou numa tarde chuvosa e nunca mais foi embora. Dizem que quem recebe um bafão do Nick tem a semana abençoada.",
     "status": "residente",
-    "foto": null
+    "foto": "/public/gatos/nick.jpg"
   },
   {
     "id": 3,
@@ -27,25 +27,9 @@
     "id": 4,
     "nome": "Tica",
     "nascimento": "2017-05-03",
-    "descricao": "Tica é a matriarca do CafeMiau. Com 8 anos de experiência em receber visitas, ela sabe exatamente quem merece atenção e quem precisa conquistar sua confiança primeiro. Digna e sábia.",
+    "descricao": "Tica é a matriarca do CafeMiau. Com muitos anos de experiência em miar para os visitantes, adorável, quieta e sábia.",
     "status": "residente",
-    "foto": null
-  },
-  {
-    "id": 5,
-    "nome": "Romeuzinho",
-    "nascimento": "2023-02-14",
-    "descricao": "Nascido no Dia dos Namorados, Romeuzinho é puro romantismo. Esfrega a cabecinha em todo mundo e parece sempre estar apaixonado. O favorito dos clientes que chegam tristes.",
-    "status": "residente",
-    "foto": null
-  },
-  {
-    "id": 6,
-    "nome": "Mavis",
-    "nascimento": "2021-10-31",
-    "descricao": "Mavis tem um olhar misterioso que encanta à primeira vista. Independente e elegante, ela aparece quando quer — mas quando aparece, é inesquecível. A gata mais fotogênica do café.",
-    "status": "residente",
-    "foto": null
+    "foto": "/public/gatos/tica.jpg"
   },
   {
     "id": 7,
@@ -53,7 +37,7 @@
     "nascimento": "2019-08-08",
     "descricao": "Ambrósio é o filósofo do grupo. Passa horas olhando pro teto como se estivesse resolvendo problemas da humanidade. Gordo, tranquilo e absolutamente adorável.",
     "status": "residente",
-    "foto": null
+    "foto": "/public/gatos/ambrosio.jpg"
   },
   {
     "id": 8,
