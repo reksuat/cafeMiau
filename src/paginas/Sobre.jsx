@@ -1,7 +1,7 @@
 function Sobre() {
   return (
     <div>
-      <h1>Sobre o CafeMiau</h1>
+      <h2>Sobre o CafeMiau</h2>
       <p>
         O CafeMiau é um café temático que combina o amor por gatos e café.
         Fundado em 2020, nosso objetivo é criar um espaço acolhedor onde os

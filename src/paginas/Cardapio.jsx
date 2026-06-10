@@ -1,7 +1,7 @@
 function Cardapio() {
   return (
     <div>
-      <h1>Cardápio</h1>
+      <h2>Cardápio</h2>
       <p>Confira nossos deliciosos cafés e lanches!</p>
     </div>
   );
