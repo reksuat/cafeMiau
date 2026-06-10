@@ -8,6 +8,7 @@ import Card from "../components/Card.jsx";
 import Grid from "../components/Grid.jsx";
 import Texto from "../components/Texto.jsx";
 import Botao from "../components/Botao.jsx";
+import ListaGatos from "../components/ListaGatos.jsx";
 import DetalhesGato from "../components/DetalhesGato.jsx";
 import FormularioVisita from "../components/FormularioVisita.jsx";
 import { calcularIdade } from "../util/CalcularIdade.jsx";
@@ -58,24 +59,6 @@ function Gatil() {
   const residentes = gatos.filter((g) => g.status === "residente");
   const adotados = gatos.filter((g) => g.status === "adotado");
 
-  const renderCard = (gato) => {
-    const textoBotaoCard =
-      gato.status === "adotado" ? "Ver História 🏡" : "Saiba mais 🐾";
-
-    return (
-      <Card
-        key={gato.id}
-        imagem={
-          gato.foto ||
-          "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=280&h=170&auto=format&fit=crop"
-        }
-        titulo={gato.nome}
-        descricao=""
-        textoBotao={textoBotaoCard}
-        onBotaoClick={() => setGatoDescricao(gato)}
-      />
-    );
-  };
   return (
     <ContainerGatil>
       <IntroducaoGatil setJanela={setJanela} />
@@ -93,15 +76,10 @@ function Gatil() {
           Já Adotados ({adotados.length})
         </BotaoAba>
       </NavAbas>
-      {abaAtiva === "moradores" ? (
-        <Grid style={{ justifyItems: "center" }}>
-          {residentes.map(renderCard)}
-        </Grid>
-      ) : (
-        <Grid style={{ justifyItems: "center" }}>
-          {adotados.map(renderCard)}
-        </Grid>
-      )}
+      <ListaGatos
+        gatos={abaAtiva === "moradores" ? residentes : adotados}
+        onSelecionar={setGatoDescricao}
+      />
       {gatoDescricao && (
         <DetalhesGato
           gato={gatoDescricao}
