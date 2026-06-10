@@ -25,6 +25,21 @@ const StyledButton = styled.button`
         : props.theme.border};
     transform: translateY(-2px);
   }
+  ${(p) =>
+    p.$variant === "icon" &&
+    `
+      background-color: transparent;
+      border: 2px solid ${p.theme.border};
+      color: ${p.theme.text};
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      padding: 0;
+      font-size: 1.3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    `}
 `;
 
 function Botao({ children, $variant, ...props }) {

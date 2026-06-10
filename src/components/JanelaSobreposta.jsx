@@ -1,22 +1,6 @@
 import styled from "styled-components";
 import Botao from "./Botao.jsx";
 
-const BotaoFechar = styled(Botao)`
-  width: 32px;
-  height: 32px;
-  position: absolute;
-  border-radius: 50%;
-  align-self: flex-end;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-  border: 2px solid ${(p) => p.theme.border};
-  color: ${(p) => p.theme.text};
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 const Fundo = styled.div`
   position: fixed;
   inset: 0;
@@ -56,7 +40,13 @@ function JanelaSobreposta({ children, onFechar }) {
     <Fundo onClick={onFechar}>
       <Container onClick={(e) => e.stopPropagation()}>
         {children}
-        <BotaoFechar onClick={onFechar}>×</BotaoFechar>
+        <Botao
+          $variant="icon"
+          style={{ margin: "0", position: "absolute", alignSelf: "flex-end" }}
+          onClick={onFechar}
+        >
+          ×
+        </Botao>
       </Container>
     </Fundo>
   );
