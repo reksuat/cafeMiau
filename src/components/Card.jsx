@@ -42,7 +42,14 @@ const CardImage = styled.img`
   }
 `;
 
-function Card({ imagem, titulo, descricao, textoBotao, onBotaoClick }) {
+function Card({
+  imagem,
+  titulo,
+  children,
+  descricao,
+  textoBotao,
+  onBotaoClick,
+}) {
   return (
     <CardContainer>
       <CardImage src={imagem} alt={titulo} />
@@ -52,12 +59,16 @@ function Card({ imagem, titulo, descricao, textoBotao, onBotaoClick }) {
       >
         {descricao}
       </p>
-      <Botao
-        onClick={onBotaoClick}
-        style={{ marginTop: "auto", padding: "10px 20px" }}
-      >
-        {textoBotao}
-      </Botao>
+      {children ? (
+        children
+      ) : (
+        <Botao
+          onClick={onBotaoClick}
+          style={{ marginTop: "auto", padding: "10px 20px" }}
+        >
+          {textoBotao}
+        </Botao>
+      )}
     </CardContainer>
   );
 }
