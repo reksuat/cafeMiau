@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import gatosBase from "../../data/Gatos.json";
 import useLocalStorage from "../../data/LocalStorage";
-
+import FormularioGato from "../../components/FormularioGato.jsx";
 import JanelaSobreposta from "../../components/JanelaSobreposta.jsx";
 import ListaGatos from "../../components/ListaGatos.jsx";
 import DetalhesGato from "../../components/DetalhesGato.jsx";
@@ -68,6 +68,25 @@ function AdminGatil() {
     }
   };
 
+  const handleSalvarGato = (dadosGato) => {
+    if (gatosBase.some((g) => g.id === dadosGato.id)) {
+      // Se o gato pertence ao JSON original, salva no objeto de 'edicoes'
+      setEdicoes({
+        ...edicoes,
+        [dadosGato.id]: dadosGato,
+      });
+    } else if (gatoParaEditar) {
+      // Se for um gato criado por você que está sendo EDITADO, atualiza nos 'extras'
+      setExtras(extras.map((g) => (g.id === dadosGato.id ? dadosGato : g)));
+    } else {
+      // Se for um gato COMPLETAMENTE NOVO, adiciona na lista de 'extras'
+      setExtras([...extras, dadosGato]);
+    }
+
+    // Fecha o modal após concluir
+    setModalAberto(false);
+  };
+
   return (
     <ContainerAdmin>
       <TopoAdmin>
@@ -92,21 +111,16 @@ function AdminGatil() {
         />
       )}
       {modalAberto && (
-        <JanelaSobreposta onFechar={() => setJanela(false)}>
+        <JanelaSobreposta onFechar={() => setModalAberto(false)}>
           <h3 style={{ textAlign: "center", marginBottom: "15px" }}>
             {gatoParaEditar
               ? `Editar ${gatoParaEditar.nome}`
               : "Cadastrar Novo Felino"}
           </h3>
-          <p style={{ textAlign: "center", opacity: 0.6, fontSize: "0.9rem" }}>
-            (O formulário com os inputs de Nome, Status e Nascimento entra aqui)
-          </p>
-          <Botao
-            onClick={() => setModalAberto(false)}
-            style={{ width: "100%", marginTop: "15px" }}
-          >
-            Salvar Registro
-          </Botao>
+          <FormularioGato
+            gatoParaEditar={gatoParaEditar}
+            onSalvar={handleSalvarGato}
+          />
         </JanelaSobreposta>
       )}
     </ContainerAdmin>

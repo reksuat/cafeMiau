@@ -24,6 +24,7 @@ function ListaGatos({ gatos, onSelecionar, isAdmin, onEditar, onExcluir }) {
           textoBotao={
             gato.status === "adotado" ? "Ver História 🏡" : "Saiba mais 🐾"
           }
+          onBotaoClick={() => onSelecionar(gato)}
         >
           {isAdmin && (
             <BotoesAdmin>
