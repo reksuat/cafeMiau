@@ -1,10 +1,7 @@
+import DashboardAdmin from "../components/DashboardAdmin.jsx";
+
 function Admin() {
-  return (
-    <div>
-      <h1>Área Administrativa</h1>
-      <p>Bem-vindo, administrador!</p>
-    </div>
-  );
+  return <DashboardAdmin />;
 }
 
 export default Admin;
