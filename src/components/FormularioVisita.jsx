@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import Input from "./Input.jsx";
 import Botao from "./Botao.jsx";
+import useLocalStorage from "../data/LocalStorage";
 
 const FormContainer = styled.form`
   width: 100%;
@@ -20,9 +21,21 @@ const FormTitulo = styled.h3`
 function FormularioVisita() {
   const [nome, setNome] = useState("");
   const [data, setData] = useState("");
+  const [reservas, setReservas] = useLocalStorage("cafemiau_reservas", []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Adiciona a nova reserva ao localStorage
+    const novaReserva = {
+      id: Date.now().toString(),
+      nome,
+      data,
+      dataCriacao: new Date().toISOString(),
+    };
+    
+    setReservas([...reservas, novaReserva]);
+    
     alert(`Agendamento enviado para ${nome}! Nos vemos dia ${data}. 🐾`);
     setNome("");
     setData("");
