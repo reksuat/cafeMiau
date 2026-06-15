@@ -7,6 +7,7 @@ export const CardContainer = styled.div`
   border-radius: 12px;
   padding: 16px;
   width: 100%;
+  height: 100%;
   max-width: 280px;
   margin: 0 auto;
   display: flex;
@@ -53,9 +54,28 @@ function Card({
   return (
     <CardContainer>
       <CardImage src={imagem} alt={titulo} />
-      <h3 style={{ margin: "5px 0" }}>{titulo}</h3>
+      <h3
+        style={{
+          margin: "10px 0 6px 0",
+          fontSize: "1.1rem",
+          minHeight: "2.4rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {titulo}
+      </h3>
       <p
-        style={{ margin: "0 0 10px 0", fontSize: "0.9rem", lineHeight: "1.4" }}
+        style={{
+          margin: "0 0 12px 0",
+          fontSize: "0.95rem",
+          lineHeight: "1.5",
+          flexGrow: "1",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
         {descricao}
       </p>
@@ -64,7 +84,7 @@ function Card({
       ) : (
         <Botao
           onClick={onBotaoClick}
-          style={{ marginTop: "auto", padding: "10px 20px" }}
+          style={{ width: "100%", padding: "10px 20px" }}
         >
           {textoBotao}
         </Botao>
