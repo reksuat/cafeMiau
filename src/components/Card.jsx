@@ -8,7 +8,6 @@ export const CardContainer = styled.div`
   padding: 16px;
   width: 100%;
   height: 100%;
-  max-width: 280px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -27,7 +26,6 @@ export const CardContainer = styled.div`
 
   @media (max-width: 480px) {
     padding: 14px;
-    width: min(100%, 280px);
   }
 `;
 
