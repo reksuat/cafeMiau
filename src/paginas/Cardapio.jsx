@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import cardapioData from "../data/Cardapio.json";
+import { useDados } from "../context/DadosContext.jsx";
 import Card from "../components/Card.jsx";
 import Grid from "../components/Grid.jsx";
 import DetalhesCardapio from "../components/DetalhesCardapio.jsx";
@@ -75,6 +75,7 @@ const categoriasMap = {
 };
 
 function Cardapio() {
+  const { cardapio: cardapioData } = useDados();
   const [abaAtiva, setAbaAtiva] = useState("bebidas-quentes");
   const [itemDetalhes, setItemDetalhes] = useState(null);
 

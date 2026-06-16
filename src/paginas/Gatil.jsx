@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import gatosBase from "../data/Gatos.json";
+import { useDados } from "../context/DadosContext.jsx";
 import useLocalStorage from "../data/LocalStorage";
 
 import JanelaSobreposta from "../components/JanelaSobreposta.jsx";
@@ -43,6 +43,7 @@ const BotaoAba = styled.button`
   }
 `;
 function Gatil() {
+  const { gatos: gatosBase } = useDados();
   const [edicoes] = useLocalStorage("cafemiau_gatos_edicoes", {});
   const [extras] = useLocalStorage("cafemiau_gatos_extras", []);
   const [abaAtiva, setAbaAtiva] = useState("moradores");
